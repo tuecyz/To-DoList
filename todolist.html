@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+  .list-button {
+  position: relative;
+  padding-left: 20px;
+}
+
+.bullet {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 40px;
+  font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="menu" id="menu">
+      <h2>Menü</h2>
+      <button class="list-button" onclick="showList('list1')" ><span class="bullet">&#8226;</span>To-Do List 1</button><br><br>
+      <button class="list-button" onclick="showList('list2')"><span class="bullet">&#8226;</span>To-Do List 2</button><br><br>
+      <button class="list-button" onclick="createNewList(); showList(listId)" style="background-color: #eaeaea; color: #333;">
+        New List <br>
+      </button>
+      
+    </div>
+
+    <div class="todo-list">
+      <div id="list1" class="hidden">
+        <h2>To-Do List 1</h2>
+        <input type="text" id="myInput1" placeholder="Yeni aktivite giriniz...">
+        <br><br>
+        <span onclick="newElement('myUL1', 'myInput1')" class="addBtn">Add</span>
+
+        <ul id="myUL1">
+          <li class="checked">Yemek Yemek</li>
+          <li>Coding</li>
+          <li>Kitap Okumak</li>
+          <li>Yürüyüş Yapmak</li>
+        </ul>
+        <br>
+      </div>
+
+      <div id="list2" class="hidden">
+        <h2>To-Do List 2</h2>
+        <input type="text" id="myInput2" placeholder="Yeni aktivite giriniz...">
+        <br><br>
+        <span onclick="newElement('myUL2', 'myInput2')" class="addBtn">Add</span>
+      
+        <ul id="myUL2" class="myUL">
+          <li class="checked">Alışverişe Gitmek</li>
+          <li>Toplantı</li>
+          <li>Ev Temizliği</li>
+          <li>Duş almak</li>
+        </ul>
+        <br>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
